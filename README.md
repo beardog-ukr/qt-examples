@@ -16,7 +16,7 @@ $
 ```
 For tests
 ```
-u1(00:07:13):$ ./test/build/bin/testApp 
+u1(00:07:13):$ ./test/build/bin/testApp
 ********* Start testing of TestDataProcessor *********
 Config: Using QtTest library 5.7.0, Qt 5.7.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 4.9.1 20140922 (Red Hat 4.9.1-10))
 PASS   : TestDataProcessor::initTestCase()
@@ -36,3 +36,9 @@ Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 ********* Finished testing of TestFileLoader *********
 $
 ```
+
+## BetaFalcon
+
+**BetaFalcon** is same as *BetaEagle* but it stores test data in files, instead of hardcoding it inside test sources. It's an overengineered solution for such simple class but becomes useful in real projects with more sophisticated data structures.
+
+Also it shows hot to use the [Qt Resource System](http://doc.qt.io/qt-5/resources.html).
