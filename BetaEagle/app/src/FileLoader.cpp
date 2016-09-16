@@ -26,8 +26,6 @@ QString FileLoader::getErrorMessage() const {
 // ============================================================================
 
 bool FileLoader::loadFile(const QString fileName) {
-  bool result = true;
-
   QFile data(fileName);
   if ( !data.open(QFile::ReadOnly)) {
     errorMessage = "Problem opening file (" + QString::number(data.error()) + ")";
@@ -36,14 +34,14 @@ bool FileLoader::loadFile(const QString fileName) {
 
   QTextStream ts(&data);
   QString line;
-  while (ts.readLineInto(&line) && result) {
+  while (ts.readLineInto(&line) ) {
     //qDebug() << "got line: " << line;
     lines.append(line);
   }
 
   data.close();
 
-  return result;
+  return true;
 }
 
 // ============================================================================
