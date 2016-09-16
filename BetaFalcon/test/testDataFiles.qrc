@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file alias="TestFileProcessor_BasicA.txt">testData/TestFileProcessor_BasicA.txt</file>
+  <file alias="TestFileProcessor_BasicB.txt">testData/TestFileProcessor_BasicB.txt</file>
+  <file alias="TestFileProcessor_Equal.txt">testData/TestFileProcessor_Equal.txt</file>
+</qresource>
+</RCC>
