@@ -47,4 +47,10 @@ Also it shows hot to use the [Qt Resource System](http://doc.qt.io/qt-5/resource
 
 **CharlieSparrow** is some kind of boilerplate Qt project; it shows how all the Qt and C++ could be organized
 
+## FoxtrotPenguin
+
+**FoxtrotPenguin** contains a lot of examples on how to work with HTTP and Qt. Explained in [this post](https://codeguida.com/post/652/).
+
+
+
 
