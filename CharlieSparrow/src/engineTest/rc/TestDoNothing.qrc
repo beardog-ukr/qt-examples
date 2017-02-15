@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+
+<qresource prefix="/DoNothingWorker">
+  <file alias="Basic.txt">DoNothing_Basic.txt</file>
+</qresource>
+
+</RCC>

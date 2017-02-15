@@ -42,3 +42,9 @@ $
 **BetaFalcon** is same as *BetaEagle* but it stores test data in files, instead of hardcoding it inside test sources. It's an overengineered solution for such simple class but becomes useful in real projects with more sophisticated data structures.
 
 Also it shows hot to use the [Qt Resource System](http://doc.qt.io/qt-5/resources.html).
+
+## CharlieSparrow
+
+**CharlieSparrow** is some kind of boilerplate Qt project; it shows how all the Qt and C++ could be organized
+
+
