@@ -51,6 +51,8 @@ Also it shows hot to use the [Qt Resource System](http://doc.qt.io/qt-5/resource
 
 **FoxtrotPenguin** contains a lot of examples on how to work with HTTP and Qt. Explained in [this post](https://codeguida.com/post/652/).
 
+## GolfLimpkin
 
+**GolfLimpkin** shows how to work with lambdas; should be explained in another post later.
 
 
