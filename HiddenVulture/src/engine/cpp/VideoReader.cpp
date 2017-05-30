@@ -125,16 +125,17 @@ void VideoReader::nextFrame() {
   drawSelectorRectangle(scaleFactor);
   drawFilename(scaleFactor);
 
-  Mat fullFrame = Mat::zeros(playingOptions.guiFrameWidth, playingOptions.guiFrameHeight, CV_8UC3);
-  int topShift = (playingOptions.guiFrameHeight-frame.rows) /2 ;
-//  copyMakeBorder(frame, fullFrame, topShift, topShift, 0,0,BORDER_REPLICATE );
-  copyMakeBorder(frame, fullFrame, topShift, topShift, 0,0,BORDER_CONSTANT, Scalar( 128, 128, 0 ) );
+  Mat fullFrame = Mat::zeros(playingOptions.guiFrameWidth, playingOptions.guiFrameHeight, CV_8UC3);  
+  const int topShift = (playingOptions.guiFrameHeight-frame.rows) /2 ;
+  const int lowShift = playingOptions.guiFrameHeight - topShift - frame.rows;  
+//  copyMakeBorder(frame, fullFrame, topShift, lowShift, 0,0,BORDER_REPLICATE );
+  copyMakeBorder(frame, fullFrame, topShift, lowShift, 0,0,BORDER_CONSTANT, Scalar( 128, 128, 0 ) );
   frame =  fullFrame;
 
   if (frame.channels()== 3){
     cv::cvtColor(frame, RGBframe, CV_BGR2RGB);
     img = QImage((const unsigned char*)(RGBframe.data),
-                 RGBframe.cols,RGBframe.rows,QImage::Format_RGB888);
+                 RGBframe.cols,RGBframe.rows, RGBframe.step, QImage::Format_RGB888);
     }
     else {
       img = QImage((const unsigned char*)(frame.data),
