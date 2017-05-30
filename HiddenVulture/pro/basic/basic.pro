@@ -15,6 +15,8 @@ OBJECTS_DIR = build/obj
 RCC_DIR = build/rcc
 UI_DIR = build/ui
 
+unix:QMAKE_CXXFLAGS += "-std=c++0x"
+
 # ==============================================================================
 
 INCLUDEPATH += "../../src/basic/cpp/"
@@ -36,13 +38,39 @@ SOURCES += ../../src/basic/cpp/HiddenVultureApp.cpp
 
 # ==============================================================================
 
-INCLUDEPATH += C:\otherProg\opencv3.2.0-build\install\include
-LIBS += -LC:\otherProg\opencv3.2.0-build\install\x86\mingw\lib
-LIBS += -lopencv_core320.dll
-LIBS += -lopencv_highgui320.dll
-LIBS += -lopencv_imgcodecs320.dll
-LIBS += -lopencv_imgproc320.dll
-LIBS += -lopencv_features2d320.dll
-LIBS += -lopencv_calib3d320.dll
-LIBS += -lopencv_video320.dll
-LIBS += -lopencv_videoio320.dll
+win32 {
+  INCLUDEPATH += C:\otherProg\opencv3.2.0-build\install\include
+  LIBS += -LC:\otherProg\opencv3.2.0-build\install\x86\mingw\lib
+  LIBS += -lopencv_core320.dll
+  LIBS += -lopencv_highgui320.dll
+  LIBS += -lopencv_imgcodecs320.dll
+  LIBS += -lopencv_imgproc320.dll
+  LIBS += -lopencv_features2d320.dll
+  LIBS += -lopencv_video320.dll
+  LIBS += -lopencv_videoio320.dll
+}
+
+unix {
+  INCLUDEPATH += /home/m1user/prog/opencv/opencv-3.2.0_install_A/include
+
+  LIBS += -L/home/m1user/prog/opencv/opencv-3.2.0_install_A/lib/
+  LIBS += -lopencv_core 
+  LIBS += -lopencv_highgui 
+  LIBS += -lopencv_imgproc 
+  LIBS += -lopencv_imgcodecs
+  LIBS += -lopencv_video 
+  LIBS += -lopencv_videoio 
+  LIBS += -lopencv_features2d 
+}
+
+
+unix:{
+    # suppress the default RPATH if you wish
+    QMAKE_LFLAGS_RPATH=
+    # add your own with quoting gyrations to make sure $ORIGIN gets to the command line unexpanded
+    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
+}
+
+
+
+

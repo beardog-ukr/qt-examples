@@ -14,6 +14,8 @@ OBJECTS_DIR = build/obj
 RCC_DIR = build/rcc
 UI_DIR = build/ui
 
+unix:QMAKE_CXXFLAGS += "-std=c++0x"
+
 # ==============================================================================
 
 #INCLUDEPATH += "../../src/engine/cpp/"
